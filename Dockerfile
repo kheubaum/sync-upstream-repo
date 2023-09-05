@@ -1,13 +1,11 @@
-FROM alpine:latest
+FROM oraclelinux:9-slim
 
-RUN apk add --no-cache \
-	bash \
-	git
+RUN microdnf install git
 
-RUN adduser -D ci
+RUN adduser -m ci
 
 ADD *.sh /home/ci/
 
-RUN chmod 555 /home/ci/*.sh 
+RUN chmod 555 /home/ci/*.sh
 
 ENTRYPOINT ["/home/ci/entrypoint.sh"]
