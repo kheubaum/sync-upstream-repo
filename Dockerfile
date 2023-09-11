@@ -1,4 +1,4 @@
-FROM oraclelinux:9-slim
+FROM ghcr.io/oracle/oraclelinux:9-slim
 
 RUN microdnf install git
 
